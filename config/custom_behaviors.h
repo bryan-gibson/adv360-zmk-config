@@ -42,11 +42,9 @@ ZMK_BEHAVIOR(mtabprev, macro,
 //)
 
 
-// Command+Tab swapper for app switching in macOS
-// Press once to activate Command+Tab, press SWAP_PREV for Command+Shift+Tab
-ZMK_BEHAVIOR(swapper, tri_state,
-    bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-    ignored-key-positions = <LB2>, <20>; // ignored key should be position of SWAP_PREV
+// Command+Tab swapper for app switching in macOS (simplified)
+ZMK_BEHAVIOR(swapper, macro,
+    bindings = <&macro_tap &kp LG(TAB)>;
 )
 
 // tap: comma (,) | shift + tap: semicolon (;) | ctrl + shift + tap: less than (<)
