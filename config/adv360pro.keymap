@@ -33,10 +33,10 @@
 #include "custom_behaviors.h"
 
 / {
-    /* remove unused keys from layout and move thumb cluster to bottom */
-    chosen {
-        zmk,matrix_transform = &urobs_transform;
-    };
+    /* use default matrix transform for compatibility */
+    // chosen {
+    //     zmk,matrix_transform = &urobs_transform;
+    // };
 
     keymap {
         compatible = "zmk,keymap";
