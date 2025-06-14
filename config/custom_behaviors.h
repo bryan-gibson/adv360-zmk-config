@@ -205,7 +205,6 @@ ZMK_BEHAVIOR(layer_toggle_hold, hold_tap,
     tapping-term-ms = <1000>;  // 1 second hold time
     quick-tap-ms = <0>;        // Disable quick tap
     bindings = <&tog>, <&none>; // Toggle DEFAULT layer on hold, no action on tap
-    #binding-cells = <1>;
 )
 
 // Define a shorthand for our new behavior
