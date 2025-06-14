@@ -16,15 +16,15 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand
 
-// Base Layer home row mods
+// Base Layer home row mods for QWERTY
 #define A_LGUI     &hml LGUI A
-#define R_LALT     &hml LALT R
-#define S_LCTRL    &hml LCTRL S
-#define T_LSHFT    &hml LSHFT T
-#define N_RSHFT    &hmr RSHFT N
-#define E_RCTRL    &hmr RCTRL E
-#define I_RALT     &hmr RALT I
-#define O_RGUI     &hmr RGUI O
+#define S_LALT     &hml LALT S
+#define D_LCTRL    &hml LCTRL D
+#define F_LSHFT    &hml LSHFT F
+#define J_RSHFT    &hmr RSHFT J
+#define K_RCTRL    &hmr RCTRL K
+#define L_RALT     &hmr RALT L
+#define SEMI_RGUI  &hmr RGUI SEMI
 
 
 // SYM Layer home row mods
