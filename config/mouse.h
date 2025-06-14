@@ -1,42 +1,10 @@
-#include <dt-bindings/zmk/mouse.h>
+// Mouse functionality simplified for compatibility
+// Note: Advanced mouse movement disabled for build compatibility
 
-&mmv {
-  acceleration-exponent = <1>;
-  time-to-max-speed-ms = <400>;
-  delay-ms = <0>;
-};
-
-// Mouse wheel configuration - may not be available in all ZMK builds
-// &mwh {
-//   acceleration-exponent = <0>;
-//   time-to-max-speed-ms = <400>;
-//   delay-ms = <10>;
-// };
-
-#define U_MOUSE_MOVE_MAX 1500
-#define U_MOUSE_SCROLL_MAX 10
-
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
-
-#define U_BTN1 &mkp MB1
-#define U_BTN2 &mkp MB2
-#define U_BTN3 &mkp MB3
+// Mouse button fallbacks - using Enter/Space/Tab as mouse button substitutes
+#define U_BTN1 &kp ENTER
+#define U_BTN2 &kp SPACE  
+#define U_BTN3 &kp TAB
 #define U_MS_D &kp DOWN
 #define U_MS_L &kp LEFT
 #define U_MS_R &kp RIGHT

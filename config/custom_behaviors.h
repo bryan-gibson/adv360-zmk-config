@@ -227,9 +227,9 @@ ZMK_BEHAVIOR(macro_kinesis, macro,
     bindings = <&macro_tap &kp K &kp I &kp N &kp E &kp S &kp I &kp S>;
 )
 
-// Double-click macro for mouse functionality
+// Double-click macro for mouse functionality (using Enter as substitute)
 ZMK_BEHAVIOR(double_click, macro,
-    bindings = <&macro_tap &mkp LCLK &mkp LCLK>;
+    bindings = <&macro_tap &kp ENTER &kp ENTER>;
 )
 
 #define KINESIS     &macro_kinesis       // Types "KINESIS"
