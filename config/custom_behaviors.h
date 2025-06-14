@@ -220,3 +220,28 @@ ZMK_BEHAVIOR(on_DEFAULT, macro_condition,
 
 // Define a shorthand for our new behavior
 #define TOGGLE_LAYER &layer_toggle_hold
+
+// Cross-platform system shortcuts
+// Windows shortcuts (for potential dual-OS users)
+#define WIN_CUT     &kp LC(X)        // Ctrl+X (Cut)
+#define WIN_COPY    &kp LC(C)        // Ctrl+C (Copy)
+#define WIN_PASTE   &kp LC(V)        // Ctrl+V (Paste)
+#define WIN_UNDO    &kp LC(Z)        // Ctrl+Z (Undo)
+#define WIN_REDO    &kp LC(Y)        // Ctrl+Y (Redo)
+#define WIN_SELALL  &kp LC(A)        // Ctrl+A (Select All)
+#define WIN_LOCK    &kp LG(L)        // Win+L (Lock PC)
+#define WIN_DESKTOP &kp LG(D)        // Win+D (Show Desktop)
+#define WIN_SNIP    &kp LS(LG(S))    // Shift+Win+S (Snipping Tool)
+
+// Additional useful macros
+ZMK_BEHAVIOR(macro_kinesis, macro,
+    bindings = <&macro_tap &kp K &kp I &kp N &kp E &kp S &kp I &kp S>;
+)
+
+// Double-click macro for mouse functionality
+ZMK_BEHAVIOR(double_click, macro,
+    bindings = <&macro_tap &mkp LCLK &mkp LCLK>;
+)
+
+#define KINESIS     &macro_kinesis       // Types "KINESIS"
+#define DBL_CLICK   &double_click        // Double mouse click
