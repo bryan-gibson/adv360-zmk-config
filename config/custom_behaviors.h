@@ -49,7 +49,6 @@ ZMK_BEHAVIOR(swapper, hold_tap,
     tapping-term-ms = <150>;
     quick-tap-ms = <0>;
     bindings = <&kp>, <&sk>;
-    #binding-cells = <1>;
 )
 
 // Alternative macro-based swapper for fallback
