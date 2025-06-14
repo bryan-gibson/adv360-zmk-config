@@ -15,9 +15,9 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-&num_word {  // num-word, requires PR #1441
-    layers = <NUM>;
-};
+// &num_word {  // num-word, requires PR #1441
+//     layers = <NUM>;
+// };
 
 // long-tap action on hold, short-tap action on all interrupts
 #define MT_CORE \
