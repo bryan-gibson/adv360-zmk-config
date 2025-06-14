@@ -15,9 +15,8 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-// &num_word {  // num-word, requires PR #1441
-//     layers = <NUM>;
-// };
+// Custom num-word-like behavior using sticky layer
+// This provides similar functionality to num_word using available ZMK features
 
 // long-tap action on hold, short-tap action on all interrupts
 #define MT_CORE \

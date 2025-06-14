@@ -42,9 +42,22 @@ ZMK_BEHAVIOR(mtabprev, macro,
 //)
 
 
-// Command+Tab swapper for app switching in macOS (simplified)
-ZMK_BEHAVIOR(swapper, macro,
-    bindings = <&macro_tap &kp LG(TAB)>;
+// Enhanced Command+Tab swapper for app switching in macOS
+// Uses sticky key behavior to hold Command while Tab can be pressed multiple times
+ZMK_BEHAVIOR(swapper, hold_tap,
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    bindings = <&kp>, <&sk>;
+    #binding-cells = <1>;
+)
+
+// Alternative macro-based swapper for fallback
+ZMK_BEHAVIOR(swapper_macro, macro,
+    bindings = <&macro_press &kp LGUI>,
+               <&macro_tap &kp TAB>,
+               <&macro_pause_for_release>,
+               <&macro_release &kp LGUI>;
 )
 
 // tap: comma (,) | shift + tap: semicolon (;) | ctrl + shift + tap: less than (<)
@@ -172,7 +185,7 @@ ZMK_BEHAVIOR(comma_dance, tap_dance,
 #define PREV_TAB    &mtabprev            // Previous tab in vim or browser (Command+Shift+T)
 #define DSK_PREV    &kp LC(LEFT)         // Control+Left (Previous desktop in macOS)
 #define DSK_NEXT    &kp LC(RIGHT)        // Control+Right (Next desktop in macOS)
-#define SWAPPER     &swapper             // Command+Tab app switcher
+#define SWAPPER     &swapper_macro       // Command+Tab app switcher
 #define SWAP_PREV   &kp LS(TAB)          // Shift+Tab (Move backward in app switcher)
 
 // Thumb keys with special behaviors
@@ -232,3 +245,12 @@ ZMK_BEHAVIOR(double_click, macro,
 
 #define KINESIS     &macro_kinesis       // Types "KINESIS"
 #define DBL_CLICK   &double_click        // Double mouse click
+
+// Custom num-word-like behavior for enhanced number input
+// Activates sticky NUM layer with smart deactivation
+ZMK_BEHAVIOR(num_word_behavior, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sl NUM>, <&to NUM>;  // Single tap: sticky NUM, double tap: lock NUM
+)
+
+#define NUM_WORD    &num_word_behavior   // Custom num-word replacement
