@@ -199,27 +199,17 @@ ZMK_BEHAVIOR(comma_dance, tap_dance,
 #define BT_4 &bt BT_SEL 4  // Select Bluetooth profile 4
 
 // Custom behavior to toggle between DEFAULT and QWERTY layers when held for 1 second
+// Simplified version - toggle to DEFAULT layer
 ZMK_BEHAVIOR(layer_toggle_hold, hold_tap,
     flavor = "tap-preferred";
     tapping-term-ms = <1000>;  // 1 second hold time
     quick-tap-ms = <0>;        // Disable quick tap
-    bindings = <&tog_layer_smart>, <&none>; // Toggle on hold, no action on tap
-)
-
-// Smart layer toggle that switches between DEFAULT and QWERTY
-ZMK_BEHAVIOR(tog_layer_smart, macro,
-    wait-ms = <0>;
-    tap-ms = <0>;
-    bindings = <&macro_conditional 1 &on_DEFAULT &tog QWERTY &tog DEFAULT>;
-)
-
-// Condition to check if we're on the DEFAULT layer
-ZMK_BEHAVIOR(on_DEFAULT, macro_condition,
-    condition = <(IS_ACTIVE_LAYER(DEFAULT))>;
+    bindings = <&tog>, <&none>; // Toggle DEFAULT layer on hold, no action on tap
+    #binding-cells = <1>;
 )
 
 // Define a shorthand for our new behavior
-#define TOGGLE_LAYER &layer_toggle_hold
+#define TOGGLE_LAYER &layer_toggle_hold DEFAULT 0
 
 // Cross-platform system shortcuts
 // Windows shortcuts (for potential dual-OS users)
