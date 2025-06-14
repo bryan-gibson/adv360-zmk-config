@@ -41,8 +41,8 @@
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 #define U_MS_U &mmv MOVE_UP
-#define U_WH_D &msc SCROLL_DOWN
-#define U_WH_L &msc SCROLL_LEFT
-#define U_WH_R &msc SCROLL_RIGHT
-#define U_WH_U &msc SCROLL_UP
+#define U_WH_D &kp PG_DN
+#define U_WH_L &kp LEFT  
+#define U_WH_R &kp RIGHT
+#define U_WH_U &kp PG_UP
 
