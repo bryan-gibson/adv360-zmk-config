@@ -21,7 +21,7 @@
 #define MOD 4
 #define MS 5
 #define NAV 6
-#define DEFAULT
+#define DEFAULT 7
 
 /* Global settings */
 #include "general.h"
