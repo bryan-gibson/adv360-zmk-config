@@ -6,11 +6,12 @@
   delay-ms = <0>;
 };
 
-&mwh {
-  acceleration-exponent = <0>;
-  time-to-max-speed-ms = <400>;
-  delay-ms = <10>;
-};
+// Mouse wheel configuration - may not be available in all ZMK builds
+// &mwh {
+//   acceleration-exponent = <0>;
+//   time-to-max-speed-ms = <400>;
+//   delay-ms = <10>;
+// };
 
 #define U_MOUSE_MOVE_MAX 1500
 #define U_MOUSE_SCROLL_MAX 10
@@ -40,8 +41,8 @@
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 #define U_MS_U &mmv MOVE_UP
-#define U_WH_D &mwh SCROLL_DOWN
-#define U_WH_L &mwh SCROLL_LEFT
-#define U_WH_R &mwh SCROLL_RIGHT
-#define U_WH_U &mwh SCROLL_UP
+#define U_WH_D &msc SCROLL_DOWN
+#define U_WH_L &msc SCROLL_LEFT
+#define U_WH_R &msc SCROLL_RIGHT
+#define U_WH_U &msc SCROLL_UP
 

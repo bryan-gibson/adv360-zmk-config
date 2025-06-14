@@ -133,10 +133,10 @@ ZMK_BEHAVIOR(comma_dance, tap_dance,
 // Shortcuts and aliases
 
 
-/* Apple Globe key */
-#define C_KEYBOARD_LAYOUT_SELECT (ZMK_HID_USAGE(HID_USAGE_CONSUMER, 0x029D))
-#define GLOBE C_KEYBOARD_LAYOUT_SELECT
-// As per PR 1938
+/* Apple Globe key - use built-in ZMK definition */
+// #define C_KEYBOARD_LAYOUT_SELECT (ZMK_HID_USAGE(HID_USAGE_CONSUMER, 0x029D))
+// #define GLOBE C_KEYBOARD_LAYOUT_SELECT
+// As per PR 1938 - GLOBE is now defined in ZMK core
 
 // Spectacle window management controls for macOS
 #define SPC_UP    &kp LA(LG(UP))         // Move window to upper position (Option+Command+Up)
