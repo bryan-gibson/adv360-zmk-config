@@ -33,10 +33,10 @@
 #include "custom_behaviors.h"
 
 / {
-    /* use urobs matrix transform for correct key mapping */
-    chosen {
-        zmk,matrix_transform = &urobs_transform;
-    };
+    /* use default matrix transform for compatibility */
+    // chosen {
+    //     zmk,matrix_transform = &urobs_transform;
+    // };
 
     keymap {
         compatible = "zmk,keymap";
